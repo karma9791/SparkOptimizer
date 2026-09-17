@@ -1,0 +1,82 @@
+body {
+    font-family: -apple-system, Segoe UI, Arial, sans-serif;
+    background: #f5f6f8;
+    color: #1f2937;
+    margin: 0;
+}
+
+.container {
+    max-width: 640px;
+    margin: 48px auto;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form label {
+    display: block;
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 24px;
+    padding: 10px 20px;
+    background: #1f4e78;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #163a59;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.param-name {
+    font-weight: 600;
+    color: #1f4e78;
+}
+
+pre {
+    background: #f0f2f5;
+    padding: 12px;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+ul.flash {
+    background: #fdecea;
+    color: #b3261e;
+    padding: 12px 16px;
+    border-radius: 4px;
+    list-style: none;
+}

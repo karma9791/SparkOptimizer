@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Spark Parameter Advisor - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>Recommended Spark Configuration</h1>
+        <p>For a cluster of {{ nodes }} nodes, {{ cores_per_node }} cores/node,
+           {{ ram_per_node_gb }} GB RAM/node:</p>
+
+        <table>
+            <tbody>
+                {% for key, value in config.items() %}
+                <tr>
+                    <td class="param-name">{{ key }}</td>
+                    <td class="param-value">{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>spark-submit snippet</h2>
+        <pre>{% for key, value in config.items() %}--conf {{ key }}={{ value }} {% endfor %}</pre>
+
+        <p><a href="{{ url_for('index') }}">&larr; Try another cluster size</a></p>
+    </main>
+</body>
+</html>

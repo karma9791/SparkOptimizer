@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Spark Parameter Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>Spark Parameter Advisor</h1>
+        <p>Enter your cluster details to get recommended Spark configuration.</p>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('calculate') }}" method="post">
+            <label for="nodes">Number of nodes</label>
+            <input type="number" id="nodes" name="nodes" min="1" required
+                   title="Total worker nodes in the cluster">
+
+            <label for="cores_per_node">Cores per node</label>
+            <input type="number" id="cores_per_node" name="cores_per_node" min="1" required
+                   title="CPU cores available on each worker node">
+
+            <label for="ram_per_node_gb">RAM per node (GB)</label>
+            <input type="number" id="ram_per_node_gb" name="ram_per_node_gb" min="1" required
+                   title="Total memory available on each worker node, in GB">
+
+            <button type="submit">Get recommendation</button>
+        </form>
+    </main>
+</body>
+</html>
